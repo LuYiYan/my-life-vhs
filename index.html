@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="我的生活录像带 — 记录时光的博客">
+  <title>我的生活录像带</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="vhs-overlay" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="tape-reel tape-reel--left" aria-hidden="true"></div>
+    <div class="header-content">
+      <p class="rec-indicator"><span class="rec-dot"></span> REC</p>
+      <h1 class="site-title glitch" data-text="我的生活录像带">我的生活录像带</h1>
+      <p class="site-tagline">按下播放，倒带回那些值得珍藏的瞬间</p>
+      <div class="timecode" id="timecode">00:00:00:00</div>
+    </div>
+    <div class="tape-reel tape-reel--right" aria-hidden="true"></div>
+  </header>
+
+  <nav class="site-nav">
+    <a href="#posts" class="nav-link">全部录像</a>
+    <a href="#about" class="nav-link">关于</a>
+  </nav>
+
+  <main>
+    <section id="posts" class="posts-section">
+      <h2 class="section-title fade-in">▶ 播放列表</h2>
+      <div class="posts-grid" id="posts-grid"></div>
+    </section>
+
+    <section id="about" class="about-section fade-in">
+      <h2 class="section-title">关于这盘磁带</h2>
+      <p>这里是我的生活录像带——用文字和画面，记录那些不想被遗忘的日常。</p>
+      <p>网站使用纯 HTML / CSS / JavaScript 构建，你可以自由修改 <code>js/posts.js</code> 添加文章，在 <code>css/style.css</code> 和 <code>js/main.js</code> 里实现你想要的动态效果。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> 我的生活录像带 · 时光永不过期</p>
+  </footer>
+
+  <div class="modal" id="post-modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-content">
+      <button class="modal-close" data-close aria-label="关闭">✕</button>
+      <header class="modal-header">
+        <span class="modal-date" id="modal-date"></span>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-tags" id="modal-tags"></div>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+    </article>
+  </div>
+
+  <script src="js/posts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
